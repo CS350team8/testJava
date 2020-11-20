@@ -1,0 +1,48 @@
+<!-- https://pmd.github.io/latest/pmd_userdocs_tools_maven.html -->
+<project>
+  <modelVersion>1.0.0</modelVersion>
+  <groupId>cs350team8</groupId>
+  <artifactId>cs350team8</artifactId>
+  <version>1</version>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>3.13.0</version> <!-- or use version from pluginManagement -->
+        <configuration>
+            <!-- failOnViolation is actually true by default, but can be disabled -->
+            <failOnViolation>true</failOnViolation>
+            <!-- printFailingErrors is pretty useful -->
+            <printFailingErrors>true</printFailingErrors>
+	        <rulesets>
+              <!-- Google CheckStyle -->
+              <ruleset>https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml</ruleset>
+            </rulesets>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>3.13.0</version>
+        <configuration>
+          <rulesets>
+            <!-- Google CheckStyle -->
+            <ruleset>https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml</ruleset>
+          </rulesets>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
+</project>
